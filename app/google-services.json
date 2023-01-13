@@ -1,0 +1,69 @@
+{
+  "project_info": {
+    "project_number": "346353815179",
+    "firebase_url": "https://fortune-app-bc835-default-rtdb.firebaseio.com",
+    "project_id": "fortune-app-bc835",
+    "storage_bucket": "fortune-app-bc835.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:346353815179:android:2865fc8d10ee4feb52ce8e",
+        "android_client_info": {
+          "package_name": "com.app.fortuneadmin"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "346353815179-uv6btblpa38jcithonep8g0aenslqtl7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB30tN1lTUsJWgszt2w6VO4yRvJPr-lEWg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "346353815179-uv6btblpa38jcithonep8g0aenslqtl7.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:346353815179:android:118712344b9560d752ce8e",
+        "android_client_info": {
+          "package_name": "com.app.fortuneapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "346353815179-uv6btblpa38jcithonep8g0aenslqtl7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB30tN1lTUsJWgszt2w6VO4yRvJPr-lEWg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "346353815179-uv6btblpa38jcithonep8g0aenslqtl7.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
