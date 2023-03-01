@@ -2,6 +2,7 @@ package com.app.fortuneadmin.managers;
 
 import static android.os.Build.VERSION.SDK_INT;
 import static com.app.fortuneadmin.constants.IConstants.CHAT_SUPPORT;
+import static com.app.fortuneadmin.constants.IConstants.CLOSED_JOINING;
 import static com.app.fortuneadmin.constants.IConstants.CLOSED_TICKET;
 import static com.app.fortuneadmin.constants.IConstants.EXTRA_IS_ONLINE;
 import static com.app.fortuneadmin.constants.IConstants.EXTRA_LASTSEEN;
@@ -11,8 +12,10 @@ import static com.app.fortuneadmin.constants.IConstants.EXTRA_VERSION_NAME;
 import static com.app.fortuneadmin.constants.IConstants.EXT_MP3;
 import static com.app.fortuneadmin.constants.IConstants.EXT_VCF;
 import static com.app.fortuneadmin.constants.IConstants.FALSE;
+import static com.app.fortuneadmin.constants.IConstants.FOLLOWUP_TICKET;
 import static com.app.fortuneadmin.constants.IConstants.IMG_DEFAULTS;
 import static com.app.fortuneadmin.constants.IConstants.IMG_FOLDER;
+import static com.app.fortuneadmin.constants.IConstants.JOINING_TICKET;
 import static com.app.fortuneadmin.constants.IConstants.MOBILE;
 import static com.app.fortuneadmin.constants.IConstants.OPENED_TICKET;
 import static com.app.fortuneadmin.constants.IConstants.PENDING_TICKET;
@@ -26,6 +29,7 @@ import static com.app.fortuneadmin.constants.IConstants.SLASH;
 import static com.app.fortuneadmin.constants.IConstants.STATUS_OFFLINE;
 import static com.app.fortuneadmin.constants.IConstants.STATUS_ONLINE;
 import static com.app.fortuneadmin.constants.IConstants.TIMESTAMP;
+import static com.app.fortuneadmin.constants.IConstants.TYPE;
 import static com.app.fortuneadmin.constants.IConstants.TYPE_RECORDING;
 
 import android.app.Activity;
@@ -709,7 +713,15 @@ public class Utils {
         } catch (Exception ignored) {
         }
     }
-
+    public static Query getJoiningTicket() {
+        return FirebaseDatabase.getInstance().getReference(JOINING_TICKET).orderByChild(TYPE).equalTo(JOINING_TICKET);
+    }
+    public static Query getFollowUpTicket() {
+        return FirebaseDatabase.getInstance().getReference(JOINING_TICKET).orderByChild(TYPE).equalTo(FOLLOWUP_TICKET);
+    }
+    public static Query geCloseJoining() {
+        return FirebaseDatabase.getInstance().getReference(JOINING_TICKET).orderByChild(TYPE).equalTo(CLOSED_JOINING);
+    }
 
 
     public static boolean isEmpty(final Object s) {

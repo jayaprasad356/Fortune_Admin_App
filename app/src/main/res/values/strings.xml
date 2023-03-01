@@ -17,6 +17,7 @@
     <string name="msgDownloadingStarted">Downloading started</string>
     <string name="msgDownloadFile">Downloading %1$s</string>
     <string name="strEmptyMsg">You can\'t send empty message</string>
+    <string name="lblFavore">Favorite</string>
 
     <string name="strTyping">typing…</string>
     <string name="msgFailedToUpload">Failed to upload!</string>

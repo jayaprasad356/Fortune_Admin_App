@@ -54,6 +54,20 @@
             android:name=".MessageActivity"
             android:exported="false" />
         <activity
+            android:name=".JoiningActivity"
+            android:exported="true">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".TabActivity"
+            android:exported="true">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
             android:name=".LoginActivity"
             android:exported="false" />
         <activity

@@ -13,6 +13,8 @@
     <color name="primaryLightColor">#0288D1</color>
     <color name="deep_orange_500">#ff5722</color>
     <color name="colorGray">#E6E6E6</color>
+    <color name="selected_Msg">#5B8FB8</color>
+
     <color name="timingBGColorWhite">#21FFFFFF</color>
     <color name="yellow_50">#fffde7</color>
     <color name="yellow_900">#F57C00</color>

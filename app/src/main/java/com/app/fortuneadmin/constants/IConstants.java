@@ -65,6 +65,10 @@ public interface IConstants {
     String EXTRA_ATTACH_DATA = "attachmentData";
     String EXTRA_ATTACH_DURATION = "attachmentDuration";
     String EXTRA_DATETIME = "datetime";
+    String EMPLOYEE_LOGIN = BaseUrl + "employee_login.php";
+    String EMAIL = "email";
+    String PASSWORD = "password";
+
     String EXTRA_SEEN = "msgseen";
     String EXTRA_STATUS = "status";
     String EXTRA_IS_ONLINE = "isOnline";
@@ -124,7 +128,14 @@ public interface IConstants {
     String FCM_GROUPS = "groups";
     String FCM_USERNAME = "username";
     String FCM_TYPE = "type";
-
+    String JOIN_CHAT="join_chat";
+    String LOGIN_TYPE = "login_type";
+    String EMP_NAME = "emp_name";
+    String EMP_ID = "emp_id";
+    String EMP_MOBILE = "emp_mobile";
+    String CLOSED_JOINING = "closed_joining";
+    String JOINING_TICKET = "joining_ticket";
+    String FOLLOWUP_TICKET = "followup_ticket";
     String FCM_URL = "https://fcm.googleapis.com/";
 
     long CLICK_DELAY_TIME = 250;

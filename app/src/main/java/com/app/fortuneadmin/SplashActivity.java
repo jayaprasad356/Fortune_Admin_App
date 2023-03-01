@@ -1,12 +1,13 @@
 package com.app.fortuneadmin;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 
-import androidx.appcompat.app.AppCompatActivity;
-
+import com.app.fortuneadmin.constants.IConstants;
 import com.app.fortuneadmin.helper.Session;
 
 public class SplashActivity extends AppCompatActivity {
@@ -32,13 +33,23 @@ public class SplashActivity extends AppCompatActivity {
             public void run() {
 
                 Session session = new Session(SplashActivity.this);
-                if (session.getBoolean("is_logged_in")){
-                    Intent intent=new Intent(SplashActivity.this, MainActivity.class);
+                if (session.getData(IConstants.LOGIN_TYPE).equals("Admin")){
+                    Intent intent = new Intent(SplashActivity.this, MainActivity.class);
+                    startActivity(intent);
+                    finish();
+
+                }else if (session.getData(IConstants.LOGIN_TYPE).equals("Super Admin")){
+                    Intent intent = new Intent(SplashActivity.this, MainActivity.class);
+                    startActivity(intent);
+                    finish();
+
+                }else if (session.getData(IConstants.LOGIN_TYPE).equals("employee")){
+                    Intent intent = new Intent(SplashActivity.this, JoiningActivity.class);
                     startActivity(intent);
                     finish();
 
                 }else{
-                    Intent intent=new Intent(SplashActivity.this,LoginActivity.class);
+                    Intent intent=new Intent(SplashActivity.this,TabActivity.class);
                     startActivity(intent);
                     finish();
 
