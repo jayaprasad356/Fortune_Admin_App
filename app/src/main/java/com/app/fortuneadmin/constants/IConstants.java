@@ -132,6 +132,8 @@ public interface IConstants {
     String LOGIN_TYPE = "login_type";
     String EMP_NAME = "emp_name";
     String EMP_ID = "emp_id";
+    String REFERRED_BY = "referred_by";
+
     String EMP_MOBILE = "emp_mobile";
     String CLOSED_JOINING = "closed_joining";
     String JOINING_TICKET = "joining_ticket";

@@ -1,9 +1,11 @@
 package com.app.fortuneadmin.adapters;
 
+import static com.app.fortuneadmin.constants.IConstants.EMP_NAME;
 import static com.app.fortuneadmin.constants.IConstants.EXTRA_USER_ID;
 import static com.app.fortuneadmin.constants.IConstants.MOBILE;
 import static com.app.fortuneadmin.constants.IConstants.NAME;
 import static com.app.fortuneadmin.constants.IConstants.ONE;
+import static com.app.fortuneadmin.constants.IConstants.REFERRED_BY;
 import static com.app.fortuneadmin.constants.IConstants.TICKET_ID;
 import static com.app.fortuneadmin.constants.IConstants.TYPE;
 import static com.app.fortuneadmin.constants.IConstants.ZERO;
@@ -57,6 +59,40 @@ public class TicketAdapters extends RecyclerView.Adapter<TicketAdapters.ViewHold
         viewHolder.tvMobile.setText(ticket.getMobile());
         viewHolder.tvDescription.setText(ticket.getDescription());
         viewHolder.tvCategory.setText(ticket.getCategory());
+        //todo close 50 above all tickets
+//        viewHolder.tvName.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                for (int d = 50; mTickets.size() > d; d++) {
+//                    if (mTickets.get(d).getType().equals(JOINING_TICKET) || mTickets.get(d).getType().equals(FOLLOWUP_TICKET) || mTickets.get(d).getType().equals(CLOSED_JOINING)) {
+//                        DatabaseReference ref1 = FirebaseDatabase.getInstance().getReference().child(JOINING_TICKET).child(mTickets.get(d).getMobile());
+//                        HashMap<String, Object> hashMap = new HashMap<>();
+//                        hashMap.put(TYPE, CLOSED_JOINING);
+//
+//                        ref1.updateChildren(hashMap).addOnCompleteListener(new OnCompleteListener<Void>() {
+//                            @Override
+//                            public void onComplete(@NonNull Task<Void> task) {
+//                                if (task.isSuccessful()) {
+//                                    Toast.makeText(mContext, "deleted Done", Toast.LENGTH_SHORT).show();
+//
+//                                } else {
+//                                    Toast.makeText(mContext, "failed", Toast.LENGTH_SHORT).show();
+//                                }
+//                            }
+//                        });
+//
+//                    }
+//                }
+//
+//
+//            }
+//        });
+        if (type.equals("showEmpName")){
+            viewHolder.empName.setVisibility(View.VISIBLE);
+            viewHolder.empName.setText(ticket.getEmp_name());
+        }else {
+            viewHolder.empName.setVisibility(View.GONE);
+        }
 
         if (ticket.getReply() != null && ticket.getReply().equals("true")){
             viewHolder.imgReplyIndicator.setVisibility(View.VISIBLE);
@@ -70,6 +106,8 @@ public class TicketAdapters extends RecyclerView.Adapter<TicketAdapters.ViewHold
                 intent.putExtra(NAME, ticket.getName());
                 intent.putExtra(TYPE, ticket.getType());
                 intent.putExtra(MOBILE, ticket.getMobile());
+                intent.putExtra(EMP_NAME, ticket.getEmp_name());
+                intent.putExtra(REFERRED_BY, ticket.getReferred_by());
                 mContext.startActivity(intent);
             }
         });
@@ -89,7 +127,7 @@ public class TicketAdapters extends RecyclerView.Adapter<TicketAdapters.ViewHold
 
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
-        public final TextView tvName,tvMobile,tvDescription,tvCategory;
+        public final TextView tvName,tvMobile,tvDescription,tvCategory,empName;
         public final ImageView imgReplyIndicator;
 
         public ViewHolder(@NonNull View itemView) {
@@ -100,6 +138,9 @@ public class TicketAdapters extends RecyclerView.Adapter<TicketAdapters.ViewHold
             tvDescription = itemView.findViewById(R.id.tvDescription);
             tvCategory = itemView.findViewById(R.id.tvCategory);
             imgReplyIndicator = itemView.findViewById(R.id.imgReplyIndicator);
+            empName=itemView.findViewById(R.id.tvEmpName);
+
+
         }
     }
 

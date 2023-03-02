@@ -1,7 +1,15 @@
 package com.app.fortuneadmin.models;
 
+import static com.app.fortuneadmin.constants.IConstants.FALSE;
+import static com.app.fortuneadmin.constants.IConstants.GEN_UNSPECIFIED;
+import static com.app.fortuneadmin.constants.IConstants.IMG_PREVIEW;
+import static com.app.fortuneadmin.constants.IConstants.STATUS_OFFLINE;
+import static com.app.fortuneadmin.constants.IConstants.TYPE_EMAIL;
+
+import com.app.fortuneadmin.managers.Utils;
 
 import java.io.Serializable;
+import java.net.URLDecoder;
 
 public class Ticket implements Serializable {
     private String id;
@@ -13,8 +21,9 @@ public class Ticket implements Serializable {
     private String support;
     private String type;
     private String reply;
+    private String emp_name;
     private String emp_mobile;
-
+    private String referred_by;
     public String getId() {
         return id;
     }
@@ -87,11 +96,27 @@ public class Ticket implements Serializable {
         this.reply = reply;
     }
 
+    public String getEmp_name() {
+        return emp_name;
+    }
+
+    public void setEmp_name(String emp_name) {
+        this.emp_name = emp_name;
+    }
+
     public String getEmp_mobile() {
         return emp_mobile;
     }
 
     public void setEmp_mobile(String emp_mobile) {
         this.emp_mobile = emp_mobile;
+    }
+
+    public String getReferred_by() {
+        return referred_by;
+    }
+
+    public void setReferred_by(String referred_by) {
+        this.referred_by = referred_by;
     }
 }
